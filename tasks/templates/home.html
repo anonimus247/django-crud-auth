@@ -4,9 +4,15 @@
 
 <main class="container py-5">
     <section class="card card-body">
+        {% if user.is_authenticated %}
+
         <h1 class="display-1 text-center">Django App</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium architecto fugit blanditiis voluptatum quasi. Consequuntur voluptatem sequi porro dolore rem molestias harum esse molestiae tenetur repellendus. Laudantium dolorum accusantium deserunt!</p>    
-    
+        
+        {% else %}
+        
+        <h1 class="text-center">BIENVENIDO A LA APP DE TAREAS DJANGO</h1>
+        <p class="text-center">Para acceder a la app debes registrarte o iniciar sesión</p>
         <div class="text-center">
             <a class="btn btn-secondary" href="/signin/">
                 Sign in 
@@ -15,8 +21,8 @@
                 Sign up
             </a>
         </div>
+        {% endif %}
     </section>  
 </main>
-
 
 {% endblock %}
